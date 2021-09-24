@@ -57,7 +57,6 @@ else
 end
 
 country = "italy"
-
 greeting =
 if  country == 'japan' then "こんにちは"
 elsif country == 'us' then "Hello"
