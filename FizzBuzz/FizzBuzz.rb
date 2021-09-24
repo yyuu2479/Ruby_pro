@@ -65,3 +65,9 @@ else '???'
 end
 
 p greeting
+
+point = 7
+day = 1
+
+
+p  point *= 5 if day == 1
