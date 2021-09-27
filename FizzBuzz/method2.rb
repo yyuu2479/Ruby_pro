@@ -52,3 +52,20 @@ end
 s = "ruby"
 p reverse_upcase!(s)
 p s
+
+p 'a'.length
+p 'a'.size
+
+
+
+a = 'hello'
+b = 'hello'
+c = b
+def m!(d)
+  d.upcase!
+end
+m!(c)
+
+p b
+p c
+p a
