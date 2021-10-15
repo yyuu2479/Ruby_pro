@@ -11,6 +11,6 @@ class FizzBuzzTest < Minitest::Test
     assert_equal 'Fizz', fizz_buzz(6)
     assert_equal 'FizzBuzz', fizz_buzz(15)
     assert_equal 'FizzBuzz', fizz_buzz(30)
-    assert_equal 'Fizz', fizz_buzz(42)
+    assert_equal 'FizzBuzz', fizz_buzz(60)
   end
 end
