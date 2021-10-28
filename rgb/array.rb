@@ -76,10 +76,34 @@
 
 # p [*1..5].to_a
 
-sum = 0
-(1..4).each { |n| sum += n }
-p sum
+# sum = 0
+# (1..4).each { |n| sum += n }
+# p sum
 
-numbers = []
-(1..10).step(2) { |n| numbers << n }
-p numbers
+# numbers = []
+# (1..10).step(2) { |n| numbers << n }
+# p numbers
+
+a = [1,2,3,4,5]
+p a
+p a[1,3]
+p a[1..3]
+p a.values_at(0, 2, 4)
+p a[a.size - 1]
+p a[-1]
+p a[-2]
+p a[-2, 2]
+p a.first
+p a.first(2)
+p a.last
+p a.last(2)
+
+b = [6,7,8,9,10]
+a.concat(b)
+p a
+
+a = [1]
+b = [2, 3]
+p a + b
+p a
+p b
