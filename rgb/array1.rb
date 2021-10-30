@@ -112,9 +112,9 @@ numbers = [1,2,3]
 #   end
 # end
 
-fruits.each do |fruit|
-  numbers.each do |n|
-    next if n.even?
-    puts "#{fruit}, #{n}"
-  end
-end
+# fruits.each do |fruit|
+#   numbers.each do |n|
+#     next if n.even?
+#     puts "#{fruit}, #{n}"
+#   end
+# end
