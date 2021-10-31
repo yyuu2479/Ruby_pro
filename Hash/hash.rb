@@ -15,8 +15,16 @@
 # p a == b
 # p a == c
 
-# currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
-# p currencies[:japan]
+currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
+# # p currencies[:japan]
+# p currencies.keys
+# p currencies.values
+# p currencies.has_key?(:japan)
+# p currencies.has_key?(:italy)
+# p currencies.include?(:japan)
+
+p currencies.to_a
+p currencies.to_h
 
 # person = {
 #   name: 'Alice',
@@ -30,14 +38,25 @@
 # p person[:friends][1]
 # p person[:phones][:home]
 
-def buy_burger(menu, drink:, potato:)
-  puts "#{menu}バーガーを購入！！"
-  if drink
-    puts "#{drink}を購入！！"
-  end
-  if potato
-    puts "ポテトも購入！！"
-  end
-end
+# def buy_burger(menu, drink:, potato:, **others)
+#   puts "#{menu}バーガーを購入！！"
+#   if drink
+#     puts "#{drink}を購入！！"
+#   end
+#   if potato
+#     puts "ポテトも購入！！"
+#   end
+#   if others[:salada]
+#     puts "サラダも購入！"
+#   end
+#   if others[:chicken]
+#     puts "チキンも購入"
+#   end
+# end
 
-buy_burger("チーズ", drink: "コーヒー", potato: false)
+# buy_burger('チーズ', drink: 'コーヒー', potato: true, salada: true, chicken: true)
+
+# def buy_burger(options = {}, menu)
+#   puts options
+# end
+# buy_burger({ 'drink' => true, 'potato' => true }, 'チーズ')
