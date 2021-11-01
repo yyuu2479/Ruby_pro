@@ -23,8 +23,8 @@ currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
 # p currencies.has_key?(:italy)
 # p currencies.include?(:japan)
 
-p currencies.to_a
-p currencies.to_h
+# p currencies.to_a
+# p currencies.to_h
 
 # person = {
 #   name: 'Alice',
@@ -60,3 +60,37 @@ p currencies.to_h
 #   puts options
 # end
 # buy_burger({ 'drink' => true, 'potato' => true }, 'チーズ')
+
+# h = Hash.new { |hash, key| hash[key] = "hello" }
+# p h[:foo]
+# p h[:bar]
+# puts h
+
+# 引数の順番
+def foo(a, b, c = 3, d = 4, *ef, g, h, i: 9, j: 10, **kl, &block)
+  "a: #{a}, b: #{b}, c: #{c}, d: #{d}, ef: #{ef}, g: #{g}, h: #{h}, i: #{i},
+  j: #{j}, kl: #{kl}, block: #{block}"
+end
+
+p foo(1, 2, 3, 4, 5, 6, 7, 8, i: 9, j: 10, k:11, l: 12){ 13 }
+
+# ぼっち演算子
+a = "ruby"
+p a&.upcase
+p a.upcase
+
+# ||=を使って自己代入
+limit = nil
+limit ||= 10
+p limit
+
+limit2 = 20
+limit2 ||= 10
+p limit2
+
+def user_exists?
+  find_user = "ひろし"
+  puts !!find_user
+end
+
+user_exists?
