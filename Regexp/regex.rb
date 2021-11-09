@@ -30,8 +30,37 @@
 
 # p "私の誕生日は1977年7月17日です。".scan(/(\d+)年(\d+)月(\d+)日/)
 
-phone = "電話番号は123-4567です"
-p phone[/\d{3}-\d{4}/]
+# phone = "電話番号は123-4567です"
+# p phone[/\d{3}-\d{4}/]
 
-text = "誕生日は1977年7月17日です"
-p text[/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, :year]
+# text = "誕生日は1977年7月17日です"
+# p text[/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, :year]
+
+# text = "123,456-789"
+# p text.split(/,|-/);
+# p text.gsub(/,|-/, ':')
+
+# text = "誕生日は1977年7月17日です"
+# p text.gsub(/(\d+)年(\d+)月(\d+)日/, '\1-\2-\3')
+# p text.gsub(/(?<year>\d+)年(?<month>\d+)月(?<day>\d+)日/, '\k<year>:\k<month>:\k<day>')
+
+# text = "123,456-789"
+# hash = {',' => ':', '-' => '/'}
+# p text.gsub(/,|-/, hash)
+
+# text = '123.456-789'
+# p text.gsub(/,|-/, ':')
+
+# pattern = '\d{3}-\d{4}'
+# p '123-4567' =~ /#{pattern}/
+
+text = '03-1234-5678'
+
+case text
+when /^\d{3}-\d{4}$/
+  puts "郵便番号です"
+when /^\d{4}\/\d{1, 2}\/\d{1, 2}$/
+  puts "日付です"
+when /^\d+-\d+-\d+$/
+  puts "電話番号です"
+end
