@@ -75,34 +75,11 @@ class Product
   # def to_s
   #   "name: #{name}, price: #{price}"
   # end
+
+  SOME_NAMES = ["Foo", "Bar", "Baz"].map(&:freeze).freeze
 end
 
-class DVD < Product
-  # attr_reader :running_time
+p Product::SOME_NAMES
+Product::SOME_NAMES << "Bat"
+p Product::SOME_NAMES
 
-  # def initialize(name, price, running_time)
-  #   super(name, price)
-  #   @running_time = running_time
-  # end
-end
-
-class User
-  attr_reader :name, :weight
-
-  def initialize(name, weight)
-    @name = name
-    @weight = weight
-  end
-
-  def heavier_than?(other_user)
-    other_user.weight < @weight
-  end
-
-  protected :weight
-end
-
-alice = User.new("Alice", 50)
-bob = User.new("Bob", 60)
-
-p alice.heavier_than?(bob)
-p bob.heavier_than?(alice)
