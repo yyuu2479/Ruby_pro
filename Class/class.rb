@@ -60,26 +60,42 @@
 # product = Product.new("A free movie")
 # puts product.price
 
-class Product
-  # attr_reader :name, :price
+# class Product
+#   # attr_reader :name, :price
 
-  # def initialize(name, price)
-  #   @name = name
-  #   @price = price
-  # end
+#   # def initialize(name, price)
+#   #   @name = name
+#   #   @price = price
+#   # end
 
-  # def self.format_price(price)
-  #   "#{price}"
-  # end
+#   # def self.format_price(price)
+#   #   "#{price}"
+#   # end
 
-  # def to_s
-  #   "name: #{name}, price: #{price}"
-  # end
+#   # def to_s
+#   #   "name: #{name}, price: #{price}"
+#   # end
 
-  SOME_NAMES = ["Foo", "Bar", "Baz"].map(&:freeze).freeze
+#   SOME_NAMES = ["Foo", "Bar", "Baz"].map(&:freeze).freeze
+# end
+
+class User
+  attr_reader :name, :weight
+
+  def initialize(name, weight)
+    @name = name
+    @weight = weight
+  end
+
+  def heavier_than?(other_user)
+    other_user.weight < @weight
+  end
+
+  protected :weight
 end
 
-p Product::SOME_NAMES
-Product::SOME_NAMES << "Bat"
-p Product::SOME_NAMES
+alice = User.new("アリス", 45)
+bob = User.new("ボブ", 60)
 
+puts alice.heavier_than?(bob)
+puts bob.heavier_than?(alice)
