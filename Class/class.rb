@@ -29,6 +29,7 @@
 
 #   def initialize(name)
 #     @name = name
+
 #   end
 
 #   def self.create_users(names)
@@ -94,51 +95,41 @@
 #   protected :weight
 # end
 
-
+# 演算子の挙動を独自に定義する
 class Product
-  attr_reader :name
+  attr_reader :code, :name
 
-  DEFAULT_PRICE = 0
-  NAME = "product"
-  SOME_NAMES = ["Foo", "Bar", "Baz"].map(&:freeze).freeze
-
-  @name = "Product"
-
-  def initialize(name)
+  def initialize(code, name)
+    @code = code
     @name = name
   end
 
-  def self.name
-    @name
-  end
-
-  def self.names_without_foo(names = SOME_NAMES)
-    names.delete('Foo')
-    names
-  end
-end
-
-class DVD < Product
-  @name = "DVD"
-
-  def self.name
-    @name
-  end
-
-  def upcase_name
-    @name.upcase
+  def ==(other)
+    if other.is_a?(Product)
+      code == other.code
+    else
+      false
+    end
   end
 end
 
-puts Product.name
-puts DVD.name
+a = Product.new("A-0001", "A greet movie")
+b = Product.new("B-0001", "An awesome film")
+c = Product.new("A-0001", "A great movie")
 
-product = Product.new("A greet movie")
-puts product.name
+puts a == b
+puts a == c
 
-dvd = DVD.new("An awesome film")
-puts dvd.name
-puts dvd.upcase_name
+# ネストしたクラス
+class User
+  class BloodType
+    attr_reader :type
 
-puts Product.name
-puts DVD.name
+    def initialize(type)
+      @type = type
+    end
+  end
+end
+
+blood_type = User::BloodType.new("B")
+puts blood_type.type
