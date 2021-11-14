@@ -96,40 +96,40 @@
 # end
 
 # 演算子の挙動を独自に定義する
-class Product
-  attr_reader :code, :name
+# class Product
+#   attr_reader :code, :name
 
-  def initialize(code, name)
-    @code = code
-    @name = name
-  end
+#   def initialize(code, name)
+#     @code = code
+#     @name = name
+#   end
 
-  def ==(other)
-    if other.is_a?(Product)
-      code == other.code
-    else
-      false
-    end
-  end
-end
+#   def ==(other)
+#     if other.is_a?(Product)
+#       code == other.code
+#     else
+#       false
+#     end
+#   end
+# end
 
-a = Product.new("A-0001", "A greet movie")
-b = Product.new("B-0001", "An awesome film")
-c = Product.new("A-0001", "A great movie")
+# a = Product.new("A-0001", "A greet movie")
+# b = Product.new("B-0001", "An awesome film")
+# c = Product.new("A-0001", "A great movie")
 
-puts a == b
-puts a == c
+# puts a == b
+# puts a == c
 
-# ネストしたクラス
-class User
-  class BloodType
-    attr_reader :type
+# # ネストしたクラス
+# class User
+#   class BloodType
+#     attr_reader :type
 
-    def initialize(type)
-      @type = type
-    end
-  end
-end
+#     def initialize(type)
+#       @type = type
+#     end
+#   end
+# end
 
-blood_type = User::BloodType.new("B")
-puts blood_type.type
+# blood_type = User::BloodType.new("B")
+# puts blood_type.type
