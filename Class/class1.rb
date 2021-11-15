@@ -36,6 +36,11 @@ bob = "bob"
 def alice.shuffle
   chars.shuffle.join
 end
-
 p alice.shuffle
-p bob.shuffle
+
+class << alice
+  def shuffle
+    chars.shuffle.join
+  end
+end
+p alice.shuffle
