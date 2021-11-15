@@ -16,9 +16,6 @@ class User
   end
 end
 
-user = User.new("アリス")
-p user.hello
-
 class User
   # def hello
   #   "#{@name}さん、こんにちは！！"
@@ -31,4 +28,14 @@ class User
   end
 end
 
-p user.hello
+
+# 特異メゾット
+alice = "alice"
+bob = "bob"
+
+def alice.shuffle
+  chars.shuffle.join
+end
+
+p alice.shuffle
+p bob.shuffle
