@@ -1,17 +1,31 @@
-# # モジュール
+# モジュール
 # module Loggable
-#   def price_tag
-#     "#{price}円"
+#   PREFIX = "[LOG]".freeze
+
+#   def hello
+#     puts "こんにちは"
+#   end
+
+#   def price_tag(price)
+#     puts "#{price}円"
+#   end
+
+#   module_function :price_tag
+# end
+
+# Loggable.price_tag(1000)
+# p Loggable::PREFIX
+
+# class Product
+#   include Loggable
+
+#   def price(price)
+#     self.price_tag(price)
 #   end
 # end
 
-# # モジュールを読み込むクラス
-# class Product
-#   include Loggable
-#   def price
-#     1000
-#   end
-# end
+# product = Product.new
+# product.price(3000)
 
 # # aがbより大きいなら正の整数
 # p 2 <=> 1
@@ -57,29 +71,31 @@
 
 # p String.class
 
-module Baseball
-  class Second
-    attr_accessor :player, :uniform_number
+# module Baseball
+#   class Second
+#     attr_accessor :player, :uniform_number
 
-    def initialize(player, uniform_number)
-      @player = player
-      @uniform_number = uniform_number
-    end
-  end
-end
+#     def initialize(player, uniform_number)
+#       @player = player
+#       @uniform_number = uniform_number
+#     end
+#   end
+# end
 
-module Clock
-  class Second
-    attr_accessor :digists
+# module Clock
+#   class Second
+#     attr_accessor :digists
 
-    def initialize(digists)
-      @digists = digists
-    end
-  end
-end
+#     def initialize(digists)
+#       @digists = digists
+#     end
+#   end
+# end
 
-b_second = Baseball::Second.new("佐藤", 4)
-c_second = Clock::Second.new(15)
+# b_second = Baseball::Second.new("佐藤", 4)
+# c_second = Clock::Second.new(15)
 
-puts b_second.player
-puts c_second.digists
+
+# puts b_second.player
+# puts c_second.digists
+
