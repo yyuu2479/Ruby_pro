@@ -99,3 +99,32 @@
 # puts b_second.player
 # puts c_second.digists
 
+# p Math.sqrt(2)
+# class Calculator
+#   include Math
+
+#   def calc_sqrt(n)
+#     sqrt(n)
+#   end
+# end
+
+# calculator = Calculator.new
+# p calculator.calc_sqrt(3)
+
+# p Math::E
+# p Math::PI
+
+module AwesomeApi
+  @base_url = ''
+  @debug_mode = false
+
+  class << self
+    attr_accessor :base_url, :debug_mode
+  end
+end
+
+AwesomeApi.base_url = "http://exsample.com"
+AwesomeApi.debug_mode = true
+
+p AwesomeApi.base_url
+p AwesomeApi.debug_mode
