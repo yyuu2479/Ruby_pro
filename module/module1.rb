@@ -1,34 +1,34 @@
 # メゾットの探索ルール
-module A
-  def to_s
-    "<A> #{super}"
-  end
-end
+# module A
+#   def to_s
+#     "<A> #{super}"
+#   end
+# end
 
-module B
-  def to_s
-    "<B> #{super}"
-  end
-end
+# module B
+#   def to_s
+#     "<B> #{super}"
+#   end
+# end
 
-class Product
-  def to_s
-    "<Product> #{super}"
-  end
-end
+# class Product
+#   def to_s
+#     "<Product> #{super}"
+#   end
+# end
 
-class DVD < Product
-  include A
-  include B
+# class DVD < Product
+#   include A
+#   include B
 
-  def to_s
-    "<DVD> #{super}"
-  end
-end
+#   def to_s
+#     "<DVD> #{super}"
+#   end
+# end
 
-dvd = DVD.new
-p dvd.to_s
-p DVD.ancestors
+# dvd = DVD.new
+# p dvd.to_s
+# p DVD.ancestors
 
 # モジュールに他のモジュールをincludeする
 module Greeting
@@ -38,6 +38,7 @@ module Greeting
 end
 
 module Aisatsu
+  # 別のモジュールをincludeする
   include Greeting
 
   def konnichiwa
@@ -46,9 +47,36 @@ module Aisatsu
 end
 
 class User
+  # Aisatsuモジュールだけをincludeする
   include Aisatsu
 end
 
 user = User.new
 p user.hello
 p user.konnichiwa
+p User.ancestors
+
+# prependでミックスイン
+module A
+  def to_s
+    "<A> #{super}"
+  end
+end
+
+module B
+  def to_s
+    "<A> #{super}"
+  end
+end
+
+class Product
+  prepend A
+
+  def to_s
+    "<Product> #{super}"
+  end
+end
+
+product = Product.new
+p product.to_s
+p Product.ancestors
