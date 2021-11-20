@@ -31,52 +31,72 @@
 # p DVD.ancestors
 
 # モジュールに他のモジュールをincludeする
-module Greeting
-  def hello
-    'hello.'
-  end
-end
+# module Greeting
+#   def hello
+#     'hello.'
+#   end
+# end
 
-module Aisatsu
-  # 別のモジュールをincludeする
-  include Greeting
+# module Aisatsu
+#   # 別のモジュールをincludeする
+#   include Greeting
 
-  def konnichiwa
-    'こんにちは。'
-  end
-end
+#   def konnichiwa
+#     'こんにちは。'
+#   end
+# end
 
-class User
-  # Aisatsuモジュールだけをincludeする
-  include Aisatsu
-end
+# class User
+#   # Aisatsuモジュールだけをincludeする
+#   include Aisatsu
+# end
 
-user = User.new
-p user.hello
-p user.konnichiwa
-p User.ancestors
+# user = User.new
+# p user.hello
+# p user.konnichiwa
+# p User.ancestors
 
 # prependでミックスイン
-module A
-  def to_s
-    "<A> #{super}"
+# module A
+#   def to_s
+#     "<A> #{super}"
+#   end
+# end
+
+# module B
+#   def to_s
+#     "<A> #{super}"
+#   end
+# end
+
+# class Product
+#   prepend A
+
+#   def to_s
+#     "<Product> #{super}"
+#   end
+# end
+
+# product = Product.new
+# p product.to_s
+# p Product.ancestors
+
+# # prependで既存メゾットを置き換える
+class Product
+  def name
+    "A greet film."
   end
 end
 
-module B
-  def to_s
-    "<A> #{super}"
+module NameDecorator
+  def name
+    "<<#{super}>>"
   end
 end
 
 class Product
-  prepend A
-
-  def to_s
-    "<Product> #{super}"
-  end
+  prepend NameDecorator
 end
 
 product = Product.new
-p product.to_s
-p Product.ancestors
+p product.name
