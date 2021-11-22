@@ -82,21 +82,64 @@
 # p Product.ancestors
 
 # # prependで既存メゾットを置き換える
-class Product
-  def name
-    "A greet film."
+# class Product
+#   def name
+#     "A greet film."
+#   end
+# end
+
+# module NameDecorator
+#   def name
+#     "<<#{super}>>"
+#   end
+# end
+
+# class Product
+#   prepend NameDecorator
+# end
+
+# product = Product.new
+# p product.name
+# p Product.ancestors
+
+# # refinementsの使い方(変更の有効範囲を限定できる)
+# module StringShuffle
+#   # refinementsが目的のため、refineメゾットを使う
+#   refine String do
+#     def shuffle
+#       chars.shuffle.join
+#     end
+#   end
+# end
+
+# class User
+#   # refinementsを有効化する
+#   using StringShuffle
+
+#   def initialize(name)
+#     @name = name
+#   end
+
+#   def shuffled_name
+#     @name.shuffle
+#   end
+# end
+
+# user = User.new("Alice")
+# p user.shuffled_name
+
+# p "Alice".shuffle
+
+# 二重コロンとドットの違い
+module Sample
+  class User
+    NAME = "Alice"
+
+    def self.hello(name = NAME)
+      "Hello, I am #{name}"
+    end
   end
 end
 
-module NameDecorator
-  def name
-    "<<#{super}>>"
-  end
-end
-
-class Product
-  prepend NameDecorator
-end
-
-product = Product.new
-p product.name
+p Sample::User::NAME
+p Sample::User.hello
