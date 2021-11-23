@@ -55,3 +55,11 @@ rescue NoMethodError, ZeroDivisionError　=> e
   puts e.backtrace
   puts "---------------"
 end
+
+begin
+  Foo.new
+rescue NoMethodError
+  puts "NoMethodErrorです"
+rescue NameError
+  puts "NameErrorです"
+end
