@@ -118,3 +118,18 @@ numbers = [1,2,3]
 #     puts "#{fruit}, #{n}"
 #   end
 # end
+
+name1 = name2 = "foo"
+p name1
+p name2
+
+a = "Ruby".chars
+p a
+p a.join
+
+a1 = Array.new(5) { "default" }
+p a1
+
+fruits = [ "apple", "orange", "melon" ]
+fruits.each_with_index { |fruit, i| puts "#{i}: #{fruit}" }
+
