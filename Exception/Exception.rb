@@ -11,6 +11,7 @@ rescue
 end
 puts "End"
 
+# 例外の補足に関するもの
 def method_1
   puts "method_1 start"
   begin
@@ -42,7 +43,7 @@ rescue => e
   puts "エラーメッセージ： #{e.message}"
   puts "バックトレース ----------"
   puts e.backtrace
-  puts "-----------------------"
+  puts "----------------------------"
 end
 
 begin
@@ -58,8 +59,8 @@ end
 
 begin
   Foo.new
-rescue NoMethodError
-  puts "NoMethodErrorです"
 rescue NameError
+  puts "NoMethodErrorです"
+rescue NoMethodError
   puts "NameErrorです"
 end
