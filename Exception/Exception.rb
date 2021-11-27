@@ -86,7 +86,7 @@ def currency_of(country)
   when :us
     puts "dollar"
   else
-    raise ArgumentError, "無名な国名です。#{country}"
+    raise ArgumentError.new("無名な国名です。#{country}")
   end
 end
 
