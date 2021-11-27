@@ -95,17 +95,36 @@ currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
 
 # user_exists?
 
-h = { "japan" => "yen", "usa" => "dollar" }
-p h
-p h["japan"] = "円"
+# h = { "japan" => "yen", "usa" => "dollar" }
+# p h
+# p h["japan"] = "円"
 
-h.each do |key, value|
-  p key
-  p value
-end
+# h.each do |key, value|
+#   p key
+#   p value
+# end
 
-p h.size
+# p h.size
 
-hash = Hash.new("存在しません")
+# hash = Hash.new("存在しません")
+# p hash
+# p hash[:japan]
+
+# def buy_burger(menu:, drink:)
+#   puts "#{menu}を購入"
+#   if drink
+#     puts "#{drink}も購入！"
+#   end
+# end
+# buy_burger(menu: "チーズバーガー", drink: "オレンジジュース")
+
+h = {us: "dollar"}
+hash = {japan: "yen"}.merge(h)
 p hash
-p hash[:japan]
+
+def buy(options = {})
+  p options
+  puts options[:drink]
+  puts options[:potsto]
+end
+buy(drink: "オレンジジュース", potsto: "ポテト")
