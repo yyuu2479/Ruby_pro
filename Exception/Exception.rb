@@ -64,3 +64,30 @@ rescue NameError
 rescue NoMethodError
   puts "NameErrorです"
 end
+
+retry_count = 0
+begin
+  puts "処理を開始します。"
+  1 / 0
+rescue => exception
+  retry_count += 1
+  if retry_count <= 3
+    puts "retryします。 (#{retry_count}回目)"
+    retry
+  else
+    puts "retryに失敗しました。"
+  end
+end
+
+def currency_of(country)
+  case country
+  when :japan
+    puts "yen"
+  when :us
+    puts "dollar"
+  else
+    raise ArgumentError, "無名な国名です。#{country}"
+  end
+end
+
+puts currency_of(:italy)
