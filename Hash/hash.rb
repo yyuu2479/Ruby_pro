@@ -126,5 +126,7 @@ def buy(options = {})
   p options
   puts options[:drink]
   puts options[:potsto]
+  puts options[:chicken]
+  puts options[:salada]
 end
-buy(drink: "オレンジジュース", potsto: "ポテト")
+buy(drink: "オレンジジュース", potsto: "ポテト", chicken: "チキン", salada: "サラダ")
