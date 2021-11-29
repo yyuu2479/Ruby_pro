@@ -7,7 +7,7 @@ end
 begin
   greeter = Greeter.new
 rescue
-  puts "例外が発生したが処理を続行します"
+  puts "例外が発生したが処理を続行します!!!"
 end
 puts "End"
 
