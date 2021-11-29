@@ -130,3 +130,7 @@ def buy(options = {})
   puts options[:salada]
 end
 buy(drink: "オレンジジュース", potsto: "ポテト", chicken: "チキン", salada: "サラダ")
+
+limit2 = 20
+limit2 ||= 10
+p limit2

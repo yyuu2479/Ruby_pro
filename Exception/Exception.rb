@@ -36,6 +36,7 @@ end
 
 method_1
 
+# 
 begin
   "abc".foo
 rescue => e
