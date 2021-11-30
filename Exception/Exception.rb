@@ -93,13 +93,41 @@
 
 # puts currency_of(:italy)
 
-users = ["アリス", "ケン", "ヒロシ"]
+# users = ["アリス", "ケン", "ヒロシ"]
 
-users.each do |user|
-  begin
-    send_mail_to(user)
-  rescue => e
-    puts "#{e.class}: #{e.message}"
-    puts e.backtrace
+# users.each do |user|
+#   begin
+#     send_mail_to(user)
+#   rescue => e
+#     puts "#{e.class}: #{e.message}"
+#     puts e.backtrace
+#   end
+# end
+
+require 'date'
+
+# def convert_date(heisei_text)
+#   m = heisei_text.match(/平成(?<jp_year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
+#   year = m[:jp_year].to_i + 1988
+#   month = m[:month].to_i
+#   day = m[:day].to_i
+#   # 例外処理の範囲を狭め、補足する例外クラスを限定している
+#   begin
+#     Date.new(year, month, day)
+#   # 補足する例外を限定(その他の例外は異常終了してくれる)
+#   rescue ArgumentError
+#     nil
+#   end
+# end
+
+def convert_date(heisei_text)
+  m = heisei_text.match(/平成(?<jp_year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
+  year = m[:jp_year].to_i + 1988
+  month = m[:month].to_i
+  day = m[:day].to_i
+  if Date.valid_date?(year, month, day)
+    Date.new(year, month, day)
   end
 end
+
+p convert_date("平成10年10月31日")
