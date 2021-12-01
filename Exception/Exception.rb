@@ -130,4 +130,18 @@ def convert_date(heisei_text)
   end
 end
 
-p convert_date("平成10年10月31日")
+def currency_of(country)
+  case country
+  when :japan
+    puts "yen"
+  when :us
+    puts "dollar"
+  when :india
+    puts "rupee"
+  else
+    raise ArgumentError, "無効な国名です! #{country}"
+  end
+end
+
+p currency = currency_of(:italy)
+p currency.upcase
