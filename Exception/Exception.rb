@@ -120,28 +120,31 @@ require 'date'
 #   end
 # end
 
-def convert_date(heisei_text)
-  m = heisei_text.match(/平成(?<jp_year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
-  year = m[:jp_year].to_i + 1988
-  month = m[:month].to_i
-  day = m[:day].to_i
-  if Date.valid_date?(year, month, day)
-    Date.new(year, month, day)
-  end
-end
+# def convert_date(heisei_text)
+#   m = heisei_text.match(/平成(?<jp_year>\d+)年(?<month>\d+)月(?<day>\d+)日/)
+#   year = m[:jp_year].to_i + 1988
+#   month = m[:month].to_i
+#   day = m[:day].to_i
+#   if Date.valid_date?(year, month, day)
+#     Date.new(year, month, day)
+#   end
+# end
 
-def currency_of(country)
-  case country
-  when :japan
-    puts "yen"
-  when :us
-    puts "dollar"
-  when :india
-    puts "rupee"
-  else
-    raise ArgumentError, "無効な国名です! #{country}"
-  end
-end
+# def currency_of(country)
+#   case country
+#   when :japan
+#     puts "yen"
+#   when :us
+#     puts "dollar"
+#   when :india
+#     puts "rupee"
+#   else
+#     raise ArgumentError, "無効な国名です! #{country}"
+#   end
+# end
 
-p currency = currency_of(:italy)
-p currency.upcase
+# p currency = currency_of(:italy)
+# p currency.upcase
+
+input = gets.chomp
+p input
