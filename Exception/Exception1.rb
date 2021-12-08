@@ -54,3 +54,19 @@ rescue
   p "バックトレース: #{$@}"
 end
 puts "--------------------------------------------------------"
+
+# 例外処理のbegin/endを省略できるケース
+def fizzbuzz(n)
+  if n % 15 == 0
+    puts "fizzbuzz"
+  elsif n % 3 == 0
+    puts "fizz"
+  elsif n % 5 == 0
+    puts "buzz"
+  else
+    puts n.to_s
+  end
+rescue => e
+  puts "エラー内容: #{e.class} エラーメッセージ: #{e.message}"
+end
+fizzbuzz()
