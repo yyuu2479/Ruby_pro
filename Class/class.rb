@@ -120,16 +120,18 @@
 # puts a == b
 # puts a == c
 
-# # ネストしたクラス
-# class User
-#   class BloodType
-#     attr_reader :type
+# ネストしたクラス
+class User
+  class BloodType
+    attr_accessor :type
 
-#     def initialize(type)
-#       @type = type
-#     end
-#   end
-# end
+    def initialize(type)
+      @type = type
+    end
+  end
+end
 
-# blood_type = User::BloodType.new("B")
-# puts blood_type.type
+blood_type = User::BloodType.new("B")
+blood_type1 = User::BloodType.new("A")
+puts blood_type.type
+puts blood_type1.type
