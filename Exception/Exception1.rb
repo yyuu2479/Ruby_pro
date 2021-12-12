@@ -69,4 +69,5 @@ def fizzbuzz(n)
 rescue => e
   puts "エラー内容: #{e.class} エラーメッセージ: #{e.message}"
 end
-fizzbuzz()
+
+fizzbuzz(30)
