@@ -21,6 +21,7 @@ case country
     p '???????'
 end
 
+# case文の戻り値をmessage変数に代入
 message =
 case country
 when 'japan'
