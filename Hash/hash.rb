@@ -122,6 +122,7 @@ h = {us: "dollar"}
 hash = {japan: "yen"}.merge(h)
 p hash
 
+# 可変長引数みたいな使い方
 def buy(options = {})
   p options
   puts options[:drink]
