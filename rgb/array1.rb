@@ -129,7 +129,9 @@ p a.join
 
 a1 = Array.new(5) { "default" }
 p a1
+a1.each do |fruits|
+  p fruits.upcase
+end
 
-fruits = [ "apple", "orange", "melon" ]
+fruits = [ "apple", "orange", "melon", "itigo", "soft", "cake" ]
 fruits.each_with_index { |fruit, i| puts "#{i}: #{fruit}" }
-
