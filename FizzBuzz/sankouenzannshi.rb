@@ -13,3 +13,13 @@ p number3
 n = 13
 n1 = n > 12 ? 'nの方が大きいです' : '１２のほうが大きいです'
 p n1
+
+string = "naoko"
+s1 = string == "ken" ? "等しいです" : "ひとしくないです"
+p s1
+
+if string == "naoko"
+  puts "等しいですif"
+else
+  puts "ひとしくないですif"
+end
