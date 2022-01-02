@@ -4,7 +4,7 @@ end
 p add(1, 2)
 
 def greeting(country)
-  return "countryを入力してください！！" if country.nil?
+  return "countryを入力してください" if country.nil?
 
   if country == "japan"
     "こんにちは！！"
@@ -13,4 +13,4 @@ def greeting(country)
   end
 end
 
-p greeting("")
+p greeting(nil)

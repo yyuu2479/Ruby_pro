@@ -42,3 +42,6 @@ TEXT
 puts b
 
 p sprintf('%0.3f + %0.3f', 1.2, 2.0)
+
+def str()
+end
