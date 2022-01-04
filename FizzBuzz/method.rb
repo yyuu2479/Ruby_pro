@@ -13,4 +13,4 @@ def greeting(country)
   end
 end
 
-p greeting(nil)
+p greeting("")
